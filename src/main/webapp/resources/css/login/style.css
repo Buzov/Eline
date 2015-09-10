@@ -1,0 +1,13 @@
+.md-tabs{
+ margin-top:20px;
+}
+.tabs .indicator {
+ height: 4px;
+}
+.mybox{
+ margin: 0 auto !important;
+ float:none !important;
+}
+.md-tabs form{
+ margin-top:20px;
+}

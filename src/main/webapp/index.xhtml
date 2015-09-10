@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Eline</title>
+        <h:outputStylesheet library="css" name="style_index.css"/>
+        <h:outputStylesheet library="css/pop_up" name="demo_page.css"/>
+        <h:outputStylesheet library="css/pop_up" name="style_modal.css"/>
+        <h:outputStylesheet library="css/login" name="materialize.min.css"/>
+        <h:outputStylesheet library="css/login" name="style.css"/>
+        <h:outputScript library="js" name="index.js" target="head"/>
+        <h:outputScript library="js" name="jquery.min.js"/>
+        <!--<h:outputScript library="js/login" name="jquery.min.js" target="head"/>-->
+        <h:outputScript library="js/login" name="materialize.min.js"/>
+    </h:head>
+    <h:body>
+
+        <h1>Focus, this is another accordion!</h1>
+        <div style="text-align: center;">
+            <a href="#win1" class="button button-green">Войти</a>
+            <a href="#win2" class="button button-red">Зарегистрироваться</a>
+        </div>
+        <a href="#x" class="overlay" id="win1"></a>
+        <div class="popup">
+            <h:form styleClass="login_form">
+                <div class="row">
+                    <div class="input-field col s6">
+
+                        <h:inputText id="email" value="#{user.username}" required="true" requiredMessage="Беда">
+                            <f:validator validatorId="com.kris.eline.util.valid.LoginValidator"/>
+                        </h:inputText>
+                        <label for="email">E-mail</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <h:inputSecret id="password" value="#{user.username}" required="true" requiredMessage="Беда">
+
+                        </h:inputSecret>
+                        <label for="password">Password</label>                
+                        
+                    </div>
+                </div>
+                <h:commandButton action="http://habrahabr.ru/post/151492/?faces-redirect=true" value="Войти"/>
+                <p><h:message for="email" styleClass="error"/></p>
+                <a class="close" title="Закрыть" href="#close"></a>
+            </h:form>
+        </div>
+        <div id="accordion">
+            <a href="#" class="cell">
+                <div class="focus"></div>
+            </a>
+            <a href="#" class="cell">
+                <div class="focus"></div>
+            </a>
+            <a href="#" class="cell">
+                <div class="focus"></div>
+            </a>
+            <a href="http://habrahabr.ru/post/151492/" class="cell">
+                <div class="focus"></div>
+            </a>
+        </div>
+
+    </h:body>
+</html>
+
