@@ -5,10 +5,25 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
     
-    <!--<application>
-            <resource-bundle>
-                    <base-name>com.kris.eline.mess.messages</base-name>
-                    <var>msg</var>
-            </resource-bundle>
-    </application>-->
+    <application>
+        <resource-bundle>
+            <base-name>mess.messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+    </application>
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>/pages/admin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>user</from-outcome>
+            <to-view-id>/pages/user.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>student</from-outcome>
+            <to-view-id>/pages/student.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

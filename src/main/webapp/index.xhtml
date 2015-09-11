@@ -5,7 +5,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-        <title>Eline</title>
+        <title>#{msg.welcome_title}</title>
         <h:outputStylesheet library="css" name="style_index.css"/>
         <h:outputStylesheet library="css/pop_up" name="demo_page.css"/>
         <h:outputStylesheet library="css/pop_up" name="style_modal.css"/>
@@ -15,9 +15,18 @@
         <h:outputScript library="js" name="jquery.min.js"/>
         <!--<h:outputScript library="js/login" name="jquery.min.js" target="head"/>-->
         <h:outputScript library="js/login" name="materialize.min.js"/>
+        <h:outputScript library="js" name="library.js" target="head"/>
     </h:head>
     <h:body>
-
+        
+        <noscript>
+            <h4><p>Включите JavaScript в вашем браузере, чтобы работать с нашим приложением</p></h4>
+            <style type="text/css">
+                .main { display:none; }
+                p { text-align: center; }
+            </style>
+        </noscript>
+        
         <h1>Focus, this is another accordion!</h1>
         <div style="text-align: center;">
             <a href="#win1" class="button button-green">Войти</a>
@@ -31,6 +40,7 @@
 
                         <h:inputText id="email" value="#{user.username}" required="true" requiredMessage="Беда">
                             <f:validator validatorId="com.kris.eline.util.valid.LoginValidator"/>
+                            <f:ajax event="keyup" render="loginError"/>
                         </h:inputText>
                         <label for="email">E-mail</label>
                     </div>
@@ -44,8 +54,8 @@
                         
                     </div>
                 </div>
-                <h:commandButton action="http://habrahabr.ru/post/151492/?faces-redirect=true" value="Войти"/>
-                <p><h:message for="email" styleClass="error"/></p>
+                <h:commandButton action="pages/user?faces-redirect=true" value="Войти" onclick="return checkValue(this.form, '#{msg.email_required}', '#{msg.welcome_title}');"/>
+                <p><h:message id="loginError" for="email" styleClass="error"/></p>
                 <a class="close" title="Закрыть" href="#close"></a>
             </h:form>
         </div>

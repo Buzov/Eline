@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
-    <Scope Scope="Project"/>
+    <Scope Scope="Project">
+        <Node id="index.xhtml" x="159" y="324" zoom="true"/>
+        <Node id="templates/content.xhtml" x="682" y="224" zoom="true"/>
+        <Node id="templates/left_menu.xhtml" x="565" y="94" zoom="true"/>
+        <Node id="pages/user.xhtml" x="270" y="163" zoom="true"/>
+        <Node id="templates/library_template.xhtml" x="455" y="25" zoom="true"/>
+        <Node id="pages/student.xhtml" x="26" y="168" zoom="true"/>
+        <Node id="templates/header.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="templates/footer.xhtml" x="149" y="52" zoom="true"/>
+        <Node id="pages/admin.xhtml" x="398" y="227" zoom="true"/>
+    </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

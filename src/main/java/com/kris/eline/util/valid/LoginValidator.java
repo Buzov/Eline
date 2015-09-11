@@ -15,9 +15,26 @@ public class LoginValidator implements Validator {
 
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
-        if (value.toString().length() < 5) {
-            //ResourceBundle bundle = ResourceBundle.getBundle("com.kris.eline.mess.messages", FacesContext.getCurrentInstance().getViewRoot().getLocale());
-            FacesMessage message = new FacesMessage("логин отстой"/*bundle.getString("login_length_error")*/);
+                ResourceBundle bundle = ResourceBundle.getBundle("mess.messages", FacesContext.getCurrentInstance().getViewRoot().getLocale());
+
+        try {
+            String newValue = value.toString();
+
+            if (newValue.length() < 5) {
+                throw new IllegalArgumentException(bundle.getString("login_length_error"));
+            }
+
+            if (!Character.isLetter(newValue.charAt(0))) {
+                throw new IllegalArgumentException(bundle.getString("first_letter_error"));
+            }
+
+            /*if (getArr().contains(newValue)) {
+                throw new IllegalArgumentException(bundle.getString("used_name"));
+            }*/
+
+
+        } catch (IllegalArgumentException e) {
+            FacesMessage message = new FacesMessage(e.getMessage());
             message.setSeverity(FacesMessage.SEVERITY_ERROR);
             throw new ValidatorException(message);
         }
@@ -27,6 +44,8 @@ public class LoginValidator implements Validator {
         List<String> list = new ArrayList<>();
         list.add("admin");
         list.add("kris");
+        list.add("user");
+        list.add("student");
         return list;
     }
     
