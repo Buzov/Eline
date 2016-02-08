@@ -6,17 +6,24 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <title>#{msg.welcome_title}</title>
-        <h:outputStylesheet library="css" name="style_index.css"/>
-        <h:outputStylesheet library="css/pop_up" name="demo_page.css"/>
+        
+        <h:outputStylesheet library="css" name="owl.css"/>
+<!--        <h:outputStylesheet library="css" name="style_index.css"/>-->
+<!--        <h:outputStylesheet library="css/pop_up" name="demo_page.css"/>
         <h:outputStylesheet library="css/pop_up" name="style_modal.css"/>
         <h:outputStylesheet library="css/login" name="materialize.min.css"/>
         <h:outputStylesheet library="css/login" name="style.css"/>
-        <h:outputStylesheet library="css/login" name="hover.css"/>
-        <h:outputScript library="js" name="index.js" target="head"/>
-        <h:outputScript library="js" name="jquery.min.js"/>
+-->        <h:outputStylesheet library="css/login" name="hover.css"/>
+        
+        <h:outputStylesheet library="css/login" name="slide.css"/>
+<!--        <h:outputStylesheet library="css/login" name="normalize.css"/>-->
+        
+<!--        <h:outputScript library="js" name="index.js" target="head"/>-->
+<!--        <h:outputScript library="js" name="jquery.min.js"/>-->
         <!--<h:outputScript library="js/login" name="jquery.min.js" target="head"/>-->
-        <h:outputScript library="js/login" name="materialize.min.js"/>
-        <h:outputScript library="js" name="library.js" target="head"/>
+<!--        <h:outputScript library="js/login" name="materialize.min.js"/>-->
+        <h:outputScript library="js/login" name="prefixfree.min.js"/><!--
+        <h:outputScript library="js" name="library.js" target="head"/>-->
     </h:head>
     <h:body>
         
@@ -28,13 +35,13 @@
             <source src="resources/sound/Celldweller.mp3" type="audio/mp3" />
         </audio>
         
-        <noscript>
+<!--        <noscript>
             <h4><p>Включите JavaScript в вашем браузере, чтобы работать с нашим приложением</p></h4>
             <style type="text/css">
                 .main { display:none; }
                 p { text-align: center; }
             </style>
-        </noscript>
+        </noscript>-->
         
 <!--        <h1>Focus, this is another accordion!</h1>
         <div style="text-align: center;">
@@ -48,7 +55,7 @@
         </span>-->
                 
 <!--        <a href="" class="overlay" id="win1"></a>-->
-        <a href="#x" class="overlay" id="win1"></a>
+<!--        <a href="#x" class="overlay" id="win1"></a>
         <div class="popup">
             <h:form styleClass="login_form">
                 <div class="row">
@@ -73,32 +80,48 @@
                 <h:commandButton action="pages/user?faces-redirect=true" value="Войти" onclick="return checkValue(this.form, '#{msg.email_required}', '#{msg.welcome_title}');"/>
                 <p><h:message id="loginError" for="email" styleClass="error"/></p>
                 <a class="close" title="Закрыть" href=""></a>
-                <!--<a class="close" title="Закрыть" href="#close"></a>-->
+                <a class="close" title="Закрыть" href="#close"></a>
             </h:form>
-        </div>
+        </div>-->
 
-        <div id="accordion">
-            <a href="#" class="cell">
-                <div class="focus"></div>
-            </a>
-            <a href="#" class="cell">
-                <div class="focus"></div>
-            </a>
-            <a href="#" class="cell">
-                <div class="focus"></div>
-            </a>
-            <a href="#" class="cell">
-                <div class="focus"></div>
-            </a>
-        </div>
+
+        
+            <input type="checkbox"/>
+            <div id="izq"></div><div id="der"></div>
+            
+            <div class="lovely-owl">
+                <div class="head">
+                    <div class="beak"></div>
+                    <div class="eye eye-r"></div>
+                    <div class="eye eye-l"></div>  
+                </div>
+                <div class="wings">
+                    <div class="heart"></div>
+                    <div class="belly"></div>
+
+                    <div class="feet left"></div>
+                    <div class="feet right"></div>
+
+
+                    <div class="hearts heart1"></div>
+                    <div class="hearts heart2"></div>
+                    <div class="hearts heart3"></div>
+                </div>
+
+                <div class="branch"></div>
+            </div>
+            
+            <h1>
+                <div style="text-align: center; margin-top: 20px; margin-right: 20px; margin-bottom: 60px;">
+                    <a href="#win1">
+                        <span class="underline-opening">
+                            Login
+                        </span>
+                    </a>
+                </div>
+            </h1>
  
-        <div style="text-align: center; margin-top: 20px; margin-right: 20px; margin-bottom: 60px;">
-            <a href="#win1">
-                <span class="underline-opening">
-                    Login
-                </span>
-            </a>
-        </div>
+        
         
         <ui:insert name="footer">
             <ui:include src="/templates/footer.xhtml"/>
