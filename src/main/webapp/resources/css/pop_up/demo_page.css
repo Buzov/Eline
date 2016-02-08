@@ -70,7 +70,7 @@ max-width: 980px;
 margin: 12px;
 }
 /* Кнопки */
-.button {
+/*.button {
 position: relative;
 display: inline-block;margin: 12px;
 padding: 0 20px;
@@ -217,7 +217,7 @@ background-image: linear-gradient(to bottom, #a87dd3, #9966cb 66%, #8f57c6);
 .button-purple:active {
 border-color: #733aab #8040be #8040be;
 background: #9966cb;
-}
+}*/
 /* инфо-блок */
 .about {
 margin: 20px auto;

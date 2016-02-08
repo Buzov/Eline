@@ -11,6 +11,7 @@
         <h:outputStylesheet library="css/pop_up" name="style_modal.css"/>
         <h:outputStylesheet library="css/login" name="materialize.min.css"/>
         <h:outputStylesheet library="css/login" name="style.css"/>
+        <h:outputStylesheet library="css/login" name="hover.css"/>
         <h:outputScript library="js" name="index.js" target="head"/>
         <h:outputScript library="js" name="jquery.min.js"/>
         <!--<h:outputScript library="js/login" name="jquery.min.js" target="head"/>-->
@@ -18,6 +19,14 @@
         <h:outputScript library="js" name="library.js" target="head"/>
     </h:head>
     <h:body>
+        
+<!--        <audio controls="x"  autoplay loop>
+            <source src="resources/sound/Celldweller.mp3" />
+        </audio>-->
+
+        <audio autoplay="true" >
+            <source src="resources/sound/Celldweller.mp3" type="audio/mp3" />
+        </audio>
         
         <noscript>
             <h4><p>Включите JavaScript в вашем браузере, чтобы работать с нашим приложением</p></h4>
@@ -27,27 +36,34 @@
             </style>
         </noscript>
         
-        <h1>Focus, this is another accordion!</h1>
+<!--        <h1>Focus, this is another accordion!</h1>
         <div style="text-align: center;">
             <a href="#win1" class="button button-green">Войти</a>
             <a href="#win2" class="button button-red">Зарегистрироваться</a>
-        </div>
+            <a href="#win1" class="button button-green">Войти</a>
+            <a href="#win2" class="button button-red">Зарегистрироваться</a>
+        </div>-->
+<!--        <span class="underline-opening">
+            <a href="#win1" class="button button-green">Hover me</a>
+        </span>-->
+                
+<!--        <a href="" class="overlay" id="win1"></a>-->
         <a href="#x" class="overlay" id="win1"></a>
         <div class="popup">
             <h:form styleClass="login_form">
                 <div class="row">
                     <div class="input-field col s6">
 
-                        <h:inputText id="email" value="#{user.username}" required="true" requiredMessage="Беда">
+                        <h:inputText id="email" value="#{user.username}" required="true" requiredMessage="Error">
                             <f:validator validatorId="com.kris.eline.util.valid.LoginValidator"/>
                             <f:ajax event="keyup" render="loginError"/>
                         </h:inputText>
-                        <label for="email">E-mail</label>
+                        <label for="email">Login</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <h:inputSecret id="password" value="#{user.username}" required="true" requiredMessage="Беда">
+                        <h:inputSecret id="password" value="#{user.username}" required="true" requiredMessage="Error">
 
                         </h:inputSecret>
                         <label for="password">Password</label>                
@@ -56,9 +72,11 @@
                 </div>
                 <h:commandButton action="pages/user?faces-redirect=true" value="Войти" onclick="return checkValue(this.form, '#{msg.email_required}', '#{msg.welcome_title}');"/>
                 <p><h:message id="loginError" for="email" styleClass="error"/></p>
-                <a class="close" title="Закрыть" href="#close"></a>
+                <a class="close" title="Закрыть" href=""></a>
+                <!--<a class="close" title="Закрыть" href="#close"></a>-->
             </h:form>
         </div>
+
         <div id="accordion">
             <a href="#" class="cell">
                 <div class="focus"></div>
@@ -69,10 +87,19 @@
             <a href="#" class="cell">
                 <div class="focus"></div>
             </a>
-            <a href="http://habrahabr.ru/post/151492/" class="cell">
+            <a href="#" class="cell">
                 <div class="focus"></div>
             </a>
         </div>
+ 
+        <div style="text-align: center; margin-top: 20px; margin-right: 20px; margin-bottom: 60px;">
+            <a href="#win1">
+                <span class="underline-opening">
+                    Login
+                </span>
+            </a>
+        </div>
+        
         <ui:insert name="footer">
             <ui:include src="/templates/footer.xhtml"/>
         </ui:insert>  
