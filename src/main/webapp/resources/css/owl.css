@@ -1,11 +1,6 @@
-body {
-  background: #a1dbff;
-  
-}
-
 .lovely-owl {
   width: 300px;
-  margin: 0 auto;
+  margin: 150px auto;
   z-index: 4;
 }
 .lovely-owl .head {

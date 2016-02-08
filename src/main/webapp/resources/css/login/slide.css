@@ -64,7 +64,7 @@ input[type="checkbox"]:checked ~ #der {
 }
 
 #izq {
-  background: url(http://f.cl.ly/items/3c0k3N320S0c3K2f0i3s/vulcano_izq.jpg) no-repeat top right;
+  background: url(../resources/images/vulcano_izq.jpg) no-repeat top right;
 }
 
 #der {
